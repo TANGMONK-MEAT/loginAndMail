@@ -1,0 +1,120 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background: url('../../static/images/login_bg.png') no-repeat center center fixed;
+    /*兼容浏览器版本*/
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+.box{
+    border-radius: 10px;
+    width:400px;
+    height:450px;
+    background:#FFF;
+    position:absolute;
+    left:82%;
+    top:42%;
+    margin-left:-195px;
+    margin-top:-160px;
+}
+.box h1{
+    font-weight:bolder;
+    font-size:20px;
+    line-height:46px;
+    height:46px;
+    overflow:hidden;
+    text-align:center;
+    background: #ff9900;
+    color: #dddddd;
+}
+.input_box{
+    width:350px;
+    padding-bottom:15px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.input_box input{
+    margin: 0 auto;
+    width:320px;
+    height:50px;
+    font-size:15px;
+    border:solid 1px #ddd;
+    text-indent:10px;
+    outline:none;
+    color: #666;
+    line-height:40px;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 3px 3px 3px 25px;
+}
+#sub_btn{
+    width:350px;
+    height:48px;
+    background: #ff9900;
+    border:none;
+    border-radius:2px;
+    outline:none;
+    cursor:pointer;
+    font-size:16px;
+    color:#dddddd;
+}
+#error_box{
+    height:40px;
+    width:350px;
+    margin:0 auto;
+    line-height:40px;
+    color:#fc4343;
+}
+.input_check_box{
+    width:350px;
+    padding-bottom:15px;
+    margin:0 auto;
+    overflow:hidden;
+}
+.input_check_box input{
+    margin: 0 auto;
+    width:150px;
+    height:50px;
+    font-size:15px;
+    border:solid 1px #ddd;
+    color: #666;
+    text-indent:10px;
+    outline:none;
+    line-height:40px;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding: 3px 3px 3px 25px;
+
+}
+.title {
+    height: 80px;
+    line-height: 80px;
+    background: #ff9900;
+    font-size: 22px;
+    padding:0 30px;
+    border-radius: 10px 10px 0 0 ;
+}
+.title img {
+    float: left;
+    margin-top: 12px;
+    margin-right: 15px;
+}
+.title span{
+    color: #666666;
+}
+.username_input{
+    background-image: url('../../static/images/username.gif');
+}
+.password_input{
+    background-image: url('../../static/images/password.gif');
+}
+.checkcode_input{
+    background-image: url('../../static/images/checkCode.gif');
+}
+a{
+    text-decoration: none;
+}

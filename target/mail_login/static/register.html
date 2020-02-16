@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">；
+    <!-- 使用Edge最新的浏览器的渲染方式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/register.css">
+    <title>用户注册</title>
+</head>
+<body>
+<div class="title">
+    <h1 style="text-align: center">欢迎注册<img src="images/login_logo.png">二手交易平台</h1>
+</div>
+<div class="box">
+    <span class="box_top_left">新用户注册</span>
+    <span class="box_top_right">已有账号?<a href="login.html">立即登录</a></span>
+    <div class="box_center">
+        <form id="registerForm" action="#" method="post">
+            <table class="table_center">
+                <tr>
+                    <td class="td_left"><label for="usernameID">用户名</label></td>
+                    <td class="td_right"><input type="text" id="usernameID" name="username" placeholder="请输入3~8个字符"></td>
+                </tr>
+                <tr>
+                    <td class="td_left"><label for="passwordID">密码</label></td>
+                    <td class="td_right"><input type="text" id="passwordID" name="password" placeholder="请输入6~11个字符"
+                                                onkeyup=""></td>
+                </tr>
+                <tr>
+                    <td class="td_left"><label>性别</label></td>
+                    <td class="td_right">
+                        <input type="radio" name="sex" value="1" checked>男
+                        <input type="radio" name="sex" value="0">女
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td_left"><label for="emailID">邮箱</label></td>
+                    <td class="td_right"><input type="email" id="emailID" name="email" placeholder="请输入邮箱"></td>
+                </tr>
+                <tr>
+                    <td class="td_left"><label for="phoneID">手机号</label></td>
+                    <td class="td_right"><input type="text" id="phoneID" name="phone" placeholder="请输入手机号"
+                                                onkeyup=""></td>
+                </tr>
+                <tr>
+                    <td class="td_left"><label for="checkCodeID">验证码</label></td>
+                    <td class="td_right"><input type="text" id="checkCodeID" name="checkCode" placeholder="请输入验证码">
+                        <a href="javascript:refreshCode();"><img id="img_check" title="看不清点击刷新" onclick="refreshCode();"
+                                                                 src="http://localhost:8080/user/checkCode"></a>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="center">
+                        <input type="submit" id="btn_sub" value="注册">
+                        <button type="reset" id="btn_reset" onclick="refreshCode();">重置</button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+        <!-- 出错显示的信息 -->
+        <div align="center">
+            <span id="errorMsg"  style="color: red;text-align: center;"></span>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.4.1.js"></script>
+<script src="js/jquery.serializejson.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+</body>
+</html>
