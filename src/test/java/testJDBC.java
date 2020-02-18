@@ -20,4 +20,34 @@ public class testJDBC {
         User user = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), "2950371251@qq.com");
         System.out.println(user.toString());
     }
+
+    @Test
+    public void test02(){
+        ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
+        JdbcTemplate jdbcTemplate = (JdbcTemplate) ioc.getBean("jdbcTemplate");
+        User user = new User("ZWL",
+                "123456",
+                "15970924595",
+                "2950371251@qq.com",
+                "100",
+                "2020-02-17",
+                "2020-02-17",
+                (byte) 1,
+                "",
+                "1111111111111",
+                "1");
+        String sql = "INSERT INTO `user` VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+        jdbcTemplate.update(sql,null,
+                user.getUsername(),
+                user.getUname(),
+                user.getPassword(),
+                user.getSex(),
+                user.getPhone(),
+                user.getEmail(),
+                user.getPower(),
+                user.getCreate_at(),
+                user.getLast_login(),
+                user.getStatus(),
+                user.getCode());
+    }
 }

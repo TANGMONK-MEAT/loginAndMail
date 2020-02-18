@@ -2,7 +2,7 @@ $(function (encodedURIComponent) {
     //当表单提交的时候,校验所有
     $("#sub_form").submit(function (encodedURIComponent) {
         //校验全部
-        if ($("#email").val() !=='' && $("#password").val() !==''  && $("#check") !=='') {
+        if ($("#email").val() !== '' && $("#password").val() !== '' && $("#check") !== '') {
             //获取表单信息,转化为json字符串
             let data = JSON.stringify($("#sub_form").serializeJSON());
             //校验通过,发送ajax请求,提交表单
@@ -17,23 +17,23 @@ $(function (encodedURIComponent) {
                     <!-- 处理后端返回的数据 -->
                     if (data.flag) {
                         //注册成功,跳转到成功页面
-                        window.location.href = "http:/localhost:8080/index";
+                        window.location.href = "http://localhost:8080/index";
                     } else {
+                        //注册失败
                         //刷新验证码
-                        refreshCode();
-                        $("#error_msg").text(data.errorMsg);
+                        $("#check_code").attr("src","http://localhost:8080/user/checkCode?time=" + new Date().getTime());
+                        $("#error_box").text(data.errorMsg);
                     }
                 },
                 error: function (data) {
                     //跳转到错误页面
                 }
             });
-        }else{
-            alert("请将登陆信息填写完整");
-            return false;
         }
+        return false;
     });
 });
+
 //切换验证码图片
 function refreshCode() {
     //获取验证码对象

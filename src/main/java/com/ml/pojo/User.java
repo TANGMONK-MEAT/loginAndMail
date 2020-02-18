@@ -23,30 +23,6 @@ public class User {
      * 用户的电话
      */
     private String phone;
-
-    public User(){}
-    public User(int id,String username, String password, String phone, String email, String create_at,String last_login, String uname, String code) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.phone = phone;
-        this.email = email;
-        this.create_at = create_at;
-        this.last_login = last_login;
-        this.uname = uname;
-        this.code = code;
-    }
-    public User(String username, String password, String phone, String email, String create_at,String last_login, String uname, String code) {
-        this.username = username;
-        this.password = password;
-        this.phone = phone;
-        this.email = email;
-        this.create_at = create_at;
-        this.last_login = last_login;
-        this.uname = uname;
-        this.code = code;
-    }
-
     /**
      * 用户邮箱
      */
@@ -76,10 +52,54 @@ public class User {
      */
     private String code;
     /**
+     * 性别
+     */
+    private String sex;
+    /**
      * 验证码
      */
     private String checkCode;
 
+    public User() {
+    }
+
+    public User(String username, String password, String phone, String email, String power, String create_at, String last_login, byte status, String uname, String code, String sex) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.phone = phone;
+        this.email = email;
+        this.power = power;
+        this.create_at = create_at;
+        this.last_login = last_login;
+        this.status = status;
+        this.uname = uname;
+        this.code = code;
+        this.sex = sex;
+    }
+
+    public User(int id, String username, String password, String phone, String email, String create_at, String last_login, String uname, String code) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.phone = phone;
+        this.email = email;
+        this.create_at = create_at;
+        this.last_login = last_login;
+        this.uname = uname;
+        this.code = code;
+    }
+
+    public User(String username, String password, String phone, String email, String create_at, String last_login, String uname, String code) {
+        this.username = username;
+        this.password = password;
+        this.phone = phone;
+        this.email = email;
+        this.create_at = create_at;
+        this.last_login = last_login;
+        this.uname = uname;
+        this.code = code;
+    }
 
     @Override
     public String toString() {
@@ -95,8 +115,17 @@ public class User {
                 ", status=" + status +
                 ", uname='" + uname + '\'' +
                 ", code='" + code + '\'' +
+                ", sex='" + sex + '\'' +
                 ", checkCode='" + checkCode + '\'' +
                 '}';
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getCheckCode() {

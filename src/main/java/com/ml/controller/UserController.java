@@ -80,11 +80,10 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public ResultInfo loginCheck(@RequestBody User user,HttpSession session){
+        System.out.println(user);
         //验证
         return userService.loginCheck(user, session);
     }
 
-    /**
-     *
-     */
+
 }

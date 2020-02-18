@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author ZWL
- * @Auther:zwl
  * @Version: 1.0
  * @create: 2020/2/14 19:32
  */
@@ -32,7 +31,7 @@ public class UserDaoImpl implements UserDao {
     /**
      * 根据用户id修改用户信息
      *
-     * @param id 用户id
+     * @param user 用户id
      * @return User
      */
     @Override
@@ -48,20 +47,20 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public int insert(User user) {
-        String sql = "INSERT INTO `user` VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO `user` VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         return jdbcTemplate.update(sql,null,
                 user.getUsername(),
+                user.getUname(),
                 user.getPassword(),
+                user.getSex(),
                 user.getPhone(),
                 user.getEmail(),
                 user.getPower(),
                 user.getCreate_at(),
                 user.getLast_login(),
                 user.getStatus(),
-                user.getUname(),
                 user.getCode());
     }
-
     /**
      * 根据用户的id删除用户信息
      *

@@ -50,12 +50,18 @@ public class UserServiceImpl implements UserService {
             //判断用户是否已经注册
             if(!userDao.isExist(user.getEmail())){
                 String nowTime = DateUtil.getNowTime();
-                user.setCreate_at(nowTime);//初始化注册时间
-                user.setLast_login(nowTime);//初始化最近登陆的时间
-                user.setStatus((byte) 0);//初始未激活状态
-                user.setPower("100");//初始化信誉分
-                String activateID = UuidUtil.getUuid();//随机生成激活码
-                user.setCode(activateID);//初始化激活码
+                //初始化注册时间
+                user.setCreate_at(nowTime);
+                //初始化最近登陆的时间
+                user.setLast_login(nowTime);
+                //初始未激活状态
+                user.setStatus((byte) 0);
+                //初始化信誉分
+                user.setPower("100");
+                //随机生成激活码
+                String activateID = UuidUtil.getUuid();
+                //初始化激活码
+                user.setCode(activateID);
                 //保存用户
                 this.save(user);
                 //激活邮件发送
@@ -107,14 +113,16 @@ public class UserServiceImpl implements UserService {
             //移除验证码，保证唯一性
             session.removeAttribute("checkCode");
             //判断验证码
-            if( checkCode != null && checkCode1 != null && checkCode.equalsIgnoreCase(checkCode.toString())){
+            if( checkCode != null && checkCode1 != null && checkCode.equalsIgnoreCase(checkCode1.toString())){
                 User user1 = userDao.findUserByEmailAndPassword(user.getEmail(),user.getPassword());
                 //判断用户的email和密码
                 if( user1 != null){
                     //判断是否激活
-                    if(user.getStatus() == 1){
+                    if(user1.getStatus() == 1){
                         //将用户的信息保存到session中
                         session.setAttribute("user",user1);
+                        //设置登陆成功标识
+                        info.setFlag(true);
                     }else{
                         info.setErrorMsg("账号尚未激活");
                     }

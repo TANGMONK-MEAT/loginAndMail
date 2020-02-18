@@ -54,8 +54,8 @@ public class DateUtil {
 	public static String getNowTime(){
 		SimpleDateFormat sdf = new SimpleDateFormat(FORMAT3);
 		Date date = new Date();
-		String _time = sdf.format(date);
-		return _time;
+		String time = sdf.format(date);
+		return time;
 	}
 
 	/**
@@ -64,8 +64,8 @@ public class DateUtil {
 	 * @return
 	 */
 	public static String getDayBeginDate(long time){
-		Long three = 24 * 60 * 60 * 1000l;
-		Long threeDay = time - three;
+		long three = 24 * 60 * 60 * 1000L;
+		long threeDay = time - three;
 		SimpleDateFormat sdf = new SimpleDateFormat(FORMAT1);
 		Date threeTime = new Date(threeDay);
 		String _time = sdf.format(threeTime);
@@ -78,7 +78,7 @@ public class DateUtil {
 	 * @return
 	 */
 	public static String getThreeBeginDate(long time){
-		Long three = 3 * 24 * 60 * 60 * 1000l;
+		Long three = 3 * 24 * 60 * 60 * 1000L;
 		Long threeDay = time - three;
 		SimpleDateFormat sdf = new SimpleDateFormat(FORMAT1);
 		Date threeTime = new Date(threeDay);
@@ -92,7 +92,7 @@ public class DateUtil {
 	 * @return
 	 */
 	public static String getMonthBeginDate(long time){
-		Long month = 30 * 24 * 60 * 60 * 1000l;
+		Long month = 30 * 24 * 60 * 60 * 1000L;
 		Long threeDay = time - month;
 		SimpleDateFormat sdf = new SimpleDateFormat(FORMAT1);
 		Date threeTime = new Date(threeDay);
@@ -106,7 +106,7 @@ public class DateUtil {
 	 * @return
 	 */
 	public static String getThreeDayBeginTime(long time){
-		Long three = 3 * 24 * 60 * 60 * 1000l;
+		Long three = 3 * 24 * 60 * 60 * 1000L;
 		Long threeDay = time - three;
 		SimpleDateFormat sdf = new SimpleDateFormat(FORMAT3);
 		Date threeTime = new Date(threeDay);
